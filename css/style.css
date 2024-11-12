@@ -9521,6 +9521,10 @@ button.bg-dark:focus {
   font-style: italic !important;
 }
 
+.text-canaco {
+  color: #332050 !important;
+}
+
 .text-white {
   color: #fff !important;
 }

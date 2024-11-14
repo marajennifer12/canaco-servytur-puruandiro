@@ -2868,6 +2868,12 @@ fieldset:disabled a.btn {
   border-color: #332050;
 }
 
+.btn-outline-canaco:hover {
+  color: whitesmoke;
+  background-color: #332050;
+  border-color: #332050;
+}
+
 .btn-outline-light:hover {
   color: #212529;
   background-color: #f8f9fa;

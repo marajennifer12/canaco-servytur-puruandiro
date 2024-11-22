@@ -31,7 +31,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
-                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                     <img src="img/logo_canaco_sevytur_puruandiro.png" width="140px" height="140px">
                     <h1 class="m-0 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
@@ -50,17 +50,17 @@
                     </div>
                     <div class="col-lg-5 text-right">
                         <div class="d-inline-flex align-items-center p-2">
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopuruandiro/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <a href="index.php" class="navbar-brand d-block d-lg-none">
                         <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -68,21 +68,29 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Inicio</a>
+                            <a href="index.php" class="nav-item nav-link">Inicio</a>
                             <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
                             <a href="tramites_y_servicios.html" class="nav-item nav-link">Trámites y servicios</a>
                             <a href="historia.html" class="nav-item nav-link">Historia</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Áreas turísticas</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="#" class="dropdown-item">Menu Item 1</a>
-                                    <a href="#" class="dropdown-item">Menu Item 2</a>
-                                    <a href="#" class="dropdown-item">Menu Item 3</a>
-                                </div>
-                            </div>
+                            <a href="noticias.html" class="nav-item nav-link">Noticias</a>
+                            <a href="areas_turisticas.html" class="nav-item nav-link">Áreas turísticas</a>
                             <a href="contacto.html" class="nav-item nav-link active">Contacto</a>
                         </div>
                         <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Negocios</a>
+                        
+
+                        <!-- Imagen como botón -->
+                        <div class="center-text">
+                        <a href="<?php echo isset($_SESSION['usuario']) ? 'cerrar_sesion.php' : 'login.php'; ?>">
+                            <img src="img/Icono_inicioSesión.png" alt="Acceder al login" class="img-fluid rounded" style="max-width: 70px;">
+                        </a>
+                        <!-- Texto centrado: solo se muestra si hay sesión -->
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <p><?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+                        <?php endif; ?>
+                    </div>
+
+
                     </div>
                 </nav>
             </div>
@@ -92,27 +100,28 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
-        <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-3 text-white text-uppercase">Contact</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Contact</p>
-                </div>
+<div class="container-fluid bg-page-header" style="margin-bottom: 90px; background-image: url('img/Contacto.jpg'); background-size: cover; background-position: center; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div> <!-- Ajusta el valor de transparencia aquí -->
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+            <h3 class="display-3 text-white text-uppercase">Contáctanos</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="index.html">Inicio</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Contacto</p>
             </div>
         </div>
     </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
 
 
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center pb-2">
-                <h6 class="text-uppercase">Contact Us</h6>
-                <h1 class="mb-4">Contact For Any Query</h1>
+                <h1 class="text-uppercase">Contáctanos</h1>
+                <h3 class="mb-4">Resolvemos todas tus dudas</h3>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-5 mb-lg-0">
@@ -121,33 +130,40 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" id="nombre" placeholder="Nombre" required="required" data-validation-required-message="Por favor, introduzca su nombre" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="text" class="form-control p-4" id="apellido" placeholder="Apellido" required="required" data-validation-required-message="Por favor, introduzca su apellido" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="email" class="form-control p-4" id="correo" placeholder="Correo" required="required" data-validation-required-message="Por favor, introduzca su Correo" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="tel" class="form-control p-4" id="telefono" placeholder="Número de teléfono" required="required" data-validation-required-message="Por favor, introduzca su número de teléfono" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control p-4" id="asunto" placeholder="Asunto" required="required" data-validation-required-message="Por favor, introduzca su asunto" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control p-4" rows="6" id="mensaje" placeholder="Mensaje" required="required" data-validation-required-message="Por favor, introduzca su mensaje"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Send Message</button>
+                                <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Enviar mensaje</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-6" style="min-height: 400px;">
                     <div class="position-relative h-100 rounded overflow-hidden">
-                        <iframe style="width: 100%; height: 100%; object-fit: cover;"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14988.263782129767!2d-101.5164704!3d20.08953!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842c51d22c719e37%3A0x682069cee0ca063b!2sCANACO!5e0!3m2!1ses-419!2smx!4v1731708799381!5m2!1ses-419!2smx" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -164,7 +180,7 @@
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Ubicación</h5>
-                        <p class="m-0">Matamoros #64</p>
+                        <p class="m-0">Matamoros #64, Col. Centro, C.P:58500 Puruándiro, Mich.</p>
                     </div>
                 </div>
             </div>
@@ -192,20 +208,23 @@
                 <a href="index.html" class="navbar-brand">
                     <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
-                <p class="text-canaco">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <p class="text-canaco" style="text-align: justify;">La Cámara Nacional de Comercio, Servicio y Turismo de Puruándiro, es una Institución de interés público, autómata, con personalidad jurídica 
+                    y patrimonio propio constituido, conforme a los dispuesto en la Ley de Cámaras Empresariales y sus Confederaciones.
+                </p>  
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopuruandiro/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="hhttps://www.facebook.com/canaco.puruandiro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces populares</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Historia</a>
-                    <a class="text-canaco" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+                    <a class="text-canaco mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-canaco mb-2" href="nosotros.html"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
+                    <a class="text-canaco mb-2" href="tramites_y_servicios.html"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
+                    <a class="text-canaco mb-2" href="historia.html"><i class="fa fa-angle-right mr-2"></i>Historia</a>
+                    <a class="text-canaco" href="noticias.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                    <a class="text-canaco" href="contacto.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

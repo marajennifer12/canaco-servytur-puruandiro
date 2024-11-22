@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,7 +32,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
-                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                     <img src="img/logo_canaco_sevytur_puruandiro.png" width="140px" height="140px">
                     <h1 class="m-0 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
@@ -50,17 +51,17 @@
                     </div>
                     <div class="col-lg-5 text-right">
                         <div class="d-inline-flex align-items-center p-2">
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopuruandiro/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                    <a href="index.php" class="navbar-brand d-block d-lg-none">
                         <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -68,29 +69,71 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                            <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
-                            <a href="tramites_y_servicios.html" class="nav-item nav-link">Trámites y servicios</a>
-                            <a href="historia.html" class="nav-item nav-link">Historia</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Áreas turísticas</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="#" class="dropdown-item">Menu Item 1</a>
-                                    <a href="#" class="dropdown-item">Menu Item 2</a>
-                                    <a href="#" class="dropdown-item">Menu Item 3</a>
-                                </div>
-                            </div>
-                            <a href="contacto.html" class="nav-item nav-link">Contacto</a>
+                            <a href="index.php" class="nav-item nav-link active">Inicio</a>
+                            <a href="nosotros.php" class="nav-item nav-link">Nosotros</a>
+                            <a href="tramites_y_servicios.php" class="nav-item nav-link">Trámites y servicios</a>
+                            <a href="historia.php" class="nav-item nav-link">Historia</a>
+                            <a href="noticias.php" class="nav-item nav-link">Noticias</a>
+                            <a href="areas_turisticas.php" class="nav-item nav-link">Áreas turísticas</a>
+                            <a href="contacto.php" class="nav-item nav-link">Contacto</a>
                         </div>
                         <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Negocios</a>
+                        
+
+
+                        <div class="center-text">
+                            <!-- Imagen como botón -->
+                            <div class="dropdown">
+                                <img 
+                                    src="img/Icono_inicioSesión.png" 
+                                    alt="Opciones de sesión" 
+                                    class="img-fluid rounded" 
+                                    style="max-width: 70px; cursor: pointer;" 
+                                    onclick="toggleMenu()"
+                                >
+                                <!-- Submenú dinámico -->
+                                <div id="sessionMenu" class="dropdown-menu" style="display: none; position: absolute; background-color: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 5px;">
+                                    <?php if (!isset($_SESSION['usuario'])): ?>
+                                        <!-- Opción para iniciar sesión -->
+                                        <a href="login.php" class="dropdown-item" style="text-decoration: none; color: #333;">Iniciar sesión</a>
+                                    <?php else: ?>
+                                        <!-- Opción para cerrar sesión -->
+                                        <a href="cerrar_sesion.php" class="dropdown-item" style="text-decoration: none; color: #333;">Cerrar sesión</a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <!-- Mostrar nombre del usuario si está en sesión -->
+                            <?php if (isset($_SESSION['usuario'])): ?>
+                                <p><?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        
+                        <script>
+                            // Función para mostrar/ocultar el submenú
+                            function toggleMenu() {
+                                const menu = document.getElementById('sessionMenu');
+                                menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+                            }
+                        
+                            // Cerrar el submenú si se hace clic fuera de él
+                            document.addEventListener('click', function(event) {
+                                const menu = document.getElementById('sessionMenu');
+                                const dropdown = menu.parentNode;
+                                if (!dropdown.contains(event.target)) {
+                                    menu.style.display = 'none';
+                                }
+                            });
+                        </script>
+                        
+
+                        
                     </div>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Header End -->
-
-
+  
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 pb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -109,9 +152,9 @@
                     <img class="position-absolute w-100 h-100" src="img/plaza-puruandiro.jpg" style="object-fit: cover;">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Results You Deserve</h4>
-                            <h3 class="display-2 text-capitalize text-white mb-4">We prepared to oppose for you</h3>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Call Us Now</a>
+                            <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">CANACO SERVYTUR PURUÁNDIRO</h4>
+                            <h3 class="display-2 text-capitalize text-white mb-4">Afíliate ahora</h3>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Informes aquí</a>
                         </div>
                     </div>
                 </div>
@@ -131,125 +174,31 @@
     <!-- Carousel End -->
 
 
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-5">
-                    <img class="img-fluid rounded" src="img/about.jpg" alt="">
-                </div>
-                <div class="col-lg-7 mt-4 mt-lg-0">
-                    <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">25 Years Experience</h2>
-                    <h6 class="text-uppercase">Learn About Us</h6>
-                    <h1 class="mb-4">We Provide Reliable And Effective Legal Services</h1>
-                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
-                    <a href="" class="btn btn-primary mt-2">Learn More</a>
-                </div>
+   <!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <h2 class="text-center text-primary mb-4">La CANACO pertenece a los municipios de</h2>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img class="img-fluid rounded" src="img/VillaMorelos.jpg" style="width: 100%; height: 200px; object-fit: cover;" alt="Villa Morelos">
+                <h3 style="margin-top: 10px; margin-left: 17%;">Villa Morelos</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img class="img-fluid rounded" src="img/Angamacutiro.jpg" style="width: 100%; height: 200px; object-fit: cover;" alt="Angamacutiro">
+                <h3 style="margin-top: 10px; margin-left: 15%;">Angamacutiro</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img class="img-fluid rounded" src="img/Pastor.jpg" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagen 3">
+                <h3 style="margin-top: 10px; margin-left: 20%;">Pastor Ortiz</h3>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img class="img-fluid rounded" src="img/Puruandiro.jpg" style="width: 100%; height: 200px; object-fit: cover;" alt="Imagen 4">
+                <h3 style="margin-top: 10px; margin-left: 22%;">Puruándiro</h3>
             </div>
         </div>
     </div>
-    <!-- About End -->
-
-
-    <!-- Services Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-3">
-                    <h6 class="text-uppercase">Our Practice</h6>
-                    <h1 class="mb-4">Our Practice Areas</h1>
-                    <p>Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
-                    <a href="" class="btn btn-primary mt-2">More Services</a>
-                </div>
-                <div class="col-lg-9 pt-5 pt-lg-0">
-                    <div class="bg-primary rounded" style="height: 200px;"></div>
-                    <div class="owl-carousel service-carousel position-relative" style="margin-top: -100px; padding: 0 30px;">
-                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                                <i class="fa fa-2x fa-landmark"></i>
-                            </div>
-                            <h5 class="mb-4 px-4">Civil Law</h5>
-                            <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                        </div>
-                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                                <i class="fa fa-2x fa-users"></i>
-                            </div>
-                            <h5 class="mb-4 px-4">Family Law</h5>
-                            <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                        </div>
-                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                                <i class="fa fa-2x fa-hand-holding-usd"></i>
-                            </div>
-                            <h5 class="mb-4 px-4">Business Law</h5>
-                            <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                        </div>
-                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                                <i class="fa fa-2x fa-gavel"></i>
-                            </div>
-                            <h5 class="mb-4 px-4">Criminal Law</h5>
-                            <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
-
-
-    <!-- Appointment Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="bg-appointment rounded">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-lg-6 py-5">
-                        <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Get An Appointment</h1>
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Correo" required="required" />
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="date" id="date" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="time" id="time" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 1</option>
-                                        <option value="3">Service 1</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Get An Appointment</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Appointment End -->
+</div>
+<!-- About End -->
 
 
     <!-- Features Start -->
@@ -258,203 +207,19 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100 rounded overflow-hidden">
-                        <img class="position-absolute w-100 h-100" src="img/feature.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/Presidente.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
-                    <div class="feature-text bg-white rounded p-lg-5">
-                        <h6 class="text-uppercase">Our Features</h6>
-                        <h1 class="mb-4">Why Choose Us</h1>
-                        <div class="d-flex mb-4">
-                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                                <h5 class="text-secondary m-0">01</h5>
-                            </div>
-                            <div class="ml-4">
-                                <h5>Best Law Practices</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                                <h5 class="text-secondary m-0">02</h5>
-                            </div>
-                            <div class="ml-4">
-                                <h5>Efficiency & Trust</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                                <h5 class="text-secondary m-0">03</h5>
-                            </div>
-                            <div class="ml-4">
-                                <h5>Results You Deserve</h5>
-                                <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                            </div>
-                        </div>
+                    <div class="feature-text bg-white rounded p-lg-5" style="text-align: justify">
+                        <h6 class="text-uppercase">H. Ayuntamiento</h6>
+                        <p class="mb-4">La Cámara Nacional de Comercio, Servicios y Turismo (CANACO) de Puruándiro ha establecido una alianza estratégica con el H. Ayuntamiento local. Esta colaboración tiene como objetivo impulsar el desarrollo económico y comercial de la región, beneficiando a los empresarios locales y fomentando un entorno favorable para los negocios.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Features End -->
-
-
-    <!-- Action Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="bg-action rounded" style="height: 500px;">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-lg-7 text-center">
-                        <h1 class="text-white mb-4">Let's get started. Call us now for a Free Consultation</h1>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="#">Call Us Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Action End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center pb-2">
-                <h6 class="text-uppercase">Our Attorneys</h6>
-                <h1 class="mb-4">Meet Our Attorneys</h1>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="bg-primary rounded" style="height: 200px;"></div>
-                    <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                                <div class="team-social">
-                                    <!--<a class="btn btn-outline-light btn-square mx-1" href="#" target="_blank"><i class="fab fa-twitter"></i></a>-->
-                                    <a class="btn btn-outline-light btn-square mx-1" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                                <div class="team-social">
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                                <div class="team-social">
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                                <div class="team-social">
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="img/team-5.jpg" alt="">
-                                <div class="team-social">
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center pb-5">
-                <h6 class="text-uppercase">Testimonial</h6>
-                <h1 class="mb-5">What Our Clients Say</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item">
-                    <div class="testimonial-text position-relative bg-secondary text-light rounded p-5 mb-4">
-                        Sed ea amet kasd elitr stet nonumy, stet rebum et ipsum est duo elitr clita lorem
-                    </div>
-                    <div class="d-flex align-items-center pt-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;" alt="">
-                        <div class="pl-4">
-                            <h5>Client Name</h5>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text position-relative bg-secondary text-light rounded p-5 mb-4">
-                        Sed ea amet kasd elitr stet nonumy, stet rebum et ipsum est duo elitr clita lorem
-                    </div>
-                    <div class="d-flex align-items-center pt-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;" alt="">
-                        <div class="pl-4">
-                            <h5>Client Name</h5>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text position-relative bg-secondary text-light rounded p-5 mb-4">
-                        Sed ea amet kasd elitr stet nonumy, stet rebum et ipsum est duo elitr clita lorem
-                    </div>
-                    <div class="d-flex align-items-center pt-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;" alt="">
-                        <div class="pl-4">
-                            <h5>Client Name</h5>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text position-relative bg-secondary text-light rounded p-5 mb-4">
-                        Sed ea amet kasd elitr stet nonumy, stet rebum et ipsum est duo elitr clita lorem
-                    </div>
-                    <div class="d-flex align-items-center pt-3">
-                        <img class="img-fluid rounded-circle" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;" alt="">
-                        <div class="pl-4">
-                            <h5>Client Name</h5>
-                            <p class="m-0">Profession</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
 
 
     <!-- Footer Start -->
@@ -465,7 +230,7 @@
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Ubicación</h5>
-                        <p class="m-0">Matamoros #64</p>
+                        <p class="m-0">Matamoros #64, Col. Centro, C.P:58500 Puruándiro, Mich.</p>
                     </div>
                 </div>
             </div>
@@ -490,23 +255,26 @@
         </div>
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <a href="index.html" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
-                <p class="text-canaco">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <p class="text-canaco" style="text-align: justify;">La Cámara Nacional de Comercio, Servicio y Turismo de Puruándiro, es una Institución de interés público, autómata, con personalidad jurídica 
+                    y patrimonio propio constituido, conforme a los dispuesto en la Ley de Cámaras Empresariales y sus Confederaciones.
+                </p>                                
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopuruandiro/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces populares</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Historia</a>
-                    <a class="text-canaco" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+                    <a class="text-canaco mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-canaco mb-2" href="nosotros.html"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
+                    <a class="text-canaco mb-2" href="tramites_y_servicios.html"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
+                    <a class="text-canaco mb-2" href="historia.html"><i class="fa fa-angle-right mr-2"></i>Historia</a>
+                    <a class="text-canaco" href="noticias.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                    <a class="text-canaco" href="contacto.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -520,8 +288,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-semi-bold text-primary mb-4">Newsletter</h4>
-                <p class="text-canaco">Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum.</p>
+                <h4 class="font-weight-semi-bold text-primary mb-4">Inicio de sesión</h4>
+                <p class="text-canaco">Puedes iniciar sesión desde aquí.</p>
                 <div class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control border-0" style="padding: 25px; width: 100px;" placeholder="Correo">

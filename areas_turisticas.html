@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CANACO SERVYTUR PURUÁNDIRO</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo_canaco_sevytur_puruandiro.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 bg-secondary d-none d-lg-block">
+                <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                    <img src="img/logo_canaco_sevytur_puruandiro.png" width="140px" height="140px">
+                    <h1 class="m-0 display-4 text-primary text-uppercase">CANACO</h1>
+                </a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row bg-white border-bottom d-none d-lg-flex">
+                    <div class="col-lg-7 text-left">
+                        <div class="h-100 d-inline-flex align-items-center py-2 px-3">
+                            <i class="fa fa-envelope text-primary mr-2"></i>
+                            <small>canacopu@hotmail.com</small>
+                        </div>
+                        <div class="h-100 d-inline-flex align-items-center py-2 px-2">
+                            <i class="fa fa-phone-alt text-primary mr-2"></i>
+                            <small>+1 438-383-0238</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-right">
+                        <div class="d-inline-flex align-items-center p-2">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
+                    <a href="index.php" class="navbar-brand d-block d-lg-none">
+                        <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.php" class="nav-item nav-link">Inicio</a>
+                            <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
+                            <a href="tramites_y_servicios.html" class="nav-item nav-link">Trámites y servicios</a>
+                            <a href="historia.html" class="nav-item nav-link">Historia</a>
+                            <a href="noticias.html" class="nav-item nav-link">Noticias</a>
+                            <a href="areas_turisticas.html" class="nav-item nav-link active">Áreas turísticas</a>
+                            <a href="contacto.html" class="nav-item nav-link">Contacto</a>
+                        </div>
+                        <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Negocios</a>
+                        
+
+                        <!-- Imagen como botón -->
+                        <div class="center-text">
+                        <a href="<?php echo isset($_SESSION['usuario']) ? 'cerrar_sesion.php' : 'login.php'; ?>">
+                            <img src="img/Icono_inicioSesión.png" alt="Acceder al login" class="img-fluid rounded" style="max-width: 70px;">
+                        </a>
+                        <!-- Texto centrado: solo se muestra si hay sesión -->
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <p><?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+                        <?php endif; ?>
+                    </div>
+
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Page Header Start -->
+<div class="container-fluid bg-page-header" style="margin-bottom: 90px; background-image: url('img/Tur1.jpg'); background-size: cover; background-position: center; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div> <!-- Ajusta el valor de transparencia aquí -->
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+            <h3 class="display-3 text-white text-uppercase">Áreas turísticas</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="index.html">Inicio</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Áreas turísticas</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- New Section Start -->
+<div class="container my-5" style="position: relative;">
+    <h2 class="text-center text-primary mb-4">Balneario "EL PEDREGAL" de Puruándiro, Michoacán.</h2>
+    <p class="text-left mb-2 text-black">
+        <strong>Desde 1994 inició el Sr. Alfredo Villegas Magaña, bien conocido como el "ferruco", actual propietario el Sr. Alfredo Villegas Hernández</strong> 
+        <br><strong>Puedes también acampar 🏖️🌄⛺🏕️</strong>
+        <br><strong>💦 🧖Disfruta de las deliciosas aguas termales con propiedades curativas👩‍⚕️🏥</strong>
+        <br><strong>⏰ De 8 de la mañana a 8 de la noche</strong>
+        <br><strong>🗓️ Los 365 días del año</strong>
+        <br><strong>🍖 Zona de asadores y áreas verdes</strong>
+        <br><strong>⛺️ Cuenta con amplio espacio para acampar.</strong>
+        <br><strong>📍 A un costado de la Carretera Puruándiro Morelia, Km. 2.5 58503 Puruándiro, Mich.</strong>
+    </p>
+    
+    <!-- Imagen de fondo -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/Pedregal1.jpg'); opacity: 0.2;  background-color: rgba(0, 0, 0, 0.5); z-index: -1;"></div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal.jpg" alt="Inauguración 1">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal2.jpg" alt="Inauguración 3">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal3.jpg" alt="Inauguración 4">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal4.jpg" alt="Inauguración 5">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal5.jpg" alt="Inauguración 6">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal6.jpg" alt="Inauguración 7">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal7.jpg" alt="Inauguración 8">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/Pedregal8.jpg" alt="Inauguración 9">
+        </div>
+        <!-- Puedes agregar más imágenes aquí si lo deseas -->
+    </div>
+    <!-- Google Maps Embed -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="map-container" style="position: relative; width: 100%; height: 400px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60374.23785569068!2d-101.52503165369838!3d20.09498383183516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d161b9c6b132b%3A0x61c7d9b8f62f4fa2!2sPuru%C3%A1ndiro%2C%20Michoac%C3%A1n!5e0!3m2!1sen!2smx!4v1589251196351!5m2!1sen!2smx" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    aria-hidden="false" 
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+   
+
+
+</div>
+<!-- New Section End -->
+
+
+<!-- New Section Start LOS ARCOS-->
+<div class="container my-5" style="position: relative;">
+    <h2 class="text-center text-primary mb-4">Balneario "Los Arcos" Ejido Puruándiro, Michoacán.</h2>
+    <p class="text-left mb-2 text-black">
+        <strong>Es un Balneario con aguas termales que se encuentra dentro de la llamada RUTA DE LA SALUD que comprende varios municipios del estado de Michoacán.</strong>
+    </p>
+    
+    <!-- Imagen de fondo -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/LosArcos.jpg'); opacity: 0.2;  background-color: rgba(0, 0, 0, 0.5); z-index: -1;"></div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos1.jpg" alt="Inauguración 1">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos2.jpg" alt="Inauguración 3">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos3.jpg" alt="Inauguración 4">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos4.jpg" alt="Inauguración 5">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos5.jpg" alt="Inauguración 6">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos6.jpg" alt="Inauguración 7">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos7.jpg" alt="Inauguración 8">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="img-fluid rounded hover-zoom" src="img/LosArcos8.jpg" alt="Inauguración 9">
+        </div>
+        <!-- Puedes agregar más imágenes aquí si lo deseas -->
+    </div>
+
+     <!-- Google Maps Embed -->
+     <div class="row mt-5">
+        <div class="col-12">
+            <div class="map-container" style="position: relative; width: 100%; height: 400px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60374.23785569068!2d-101.52503165369838!3d20.09498383183516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d161b9c6b132b%3A0x61c7d9b8f62f4fa2!2sPuru%C3%A1ndiro%2C%20Michoac%C3%A1n!5e0!3m2!1sen!2smx!4v1589251196351!5m2!1sen!2smx" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    aria-hidden="false" 
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- New Section End -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+    <div class="row mt-5">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="d-flex justify-content-center p-4" style="background: rgba(256, 256, 256, .05);">
+                <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
+                <div class="ml-3">
+                    <h5 class="text-white">Ubicación</h5>
+                    <p class="m-0">Matamoros #64, Col. Centro, C.P:58500 Puruándiro, Mich.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="d-flex justify-content-center p-4" style="background: rgba(256, 256, 256, .05);">
+                <i class="fa fa-2x fa-envelope-open text-primary"></i>
+                <div class="ml-3">
+                    <h5 class="text-white">Correo</h5>
+                    <p class="m-0">canacopu@hotmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="d-flex justify-content-center p-4" style="background: rgba(256, 256, 256, .05);">
+                <i class="fa fa-2x fa-phone-alt text-primary"></i>
+                <div class="ml-3">
+                    <h5 class="text-white">Teléfono</h5>
+                    <p class="m-0">+52 438-383-0238</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">CANACO</h1>
+            </a>
+            <p class="text-canaco" style="text-align: justify;">La Cámara Nacional de Comercio, Servicio y Turismo de Puruándiro, es una Institución de interés público, autómata, con personalidad jurídica 
+                y patrimonio propio constituido, conforme a los dispuesto en la Ley de Cámaras Empresariales y sus Confederaciones.
+            </p>  
+            <div class="d-flex justify-content-start mt-4">
+                <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces populares</h4>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-canaco mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                <a class="text-canaco mb-2" href="nosotros.html"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
+                <a class="text-canaco mb-2" href="tramites_y_servicios.html"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
+                <a class="text-canaco mb-2" href="historia.html"><i class="fa fa-angle-right mr-2"></i>Historia</a>
+                <a class="text-canaco" href="noticias.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                <a class="text-canaco" href="turismo.html"><i class="fa fa-angle-right mr-2"></i>Áreas turísticas</a>
+                <a class="text-canaco" href="contacto.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces rápidos</h4>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>FAQs</a>
+                <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Ayuda</a>
+                <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Términos</a>
+                <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacidad</a>
+                <a class="text-canaco" href="#"><i class="fa fa-angle-right mr-2"></i>Mapa del sitio</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="font-weight-semi-bold text-primary mb-4">Inicio de sesión</h4>
+            <p class="text-canaco">Puedes iniciar sesión desde aquí.</p>
+            <div class="w-100">
+                <div class="input-group">
+                    <input type="text" class="form-control border-0" style="padding: 25px; width: 100px;" placeholder="Correo">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-4">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row p-4 mt-5 mx-0" style="background: rgba(256, 256, 256, .05);">
+        <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white">&copy; <a class="font-weight-bold text-canaco" href="#">CANACO SERVYTUR PURUÁNDIRO</a>. Todos los Derechos Reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-right">
+            <p class="m-0 text-white">Diseñado por <a class="font-weight-bold text-canaco" href="https://htmlcodex.com">HTML Codex</a></p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary px-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+ </body>
+
+</html>

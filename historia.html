@@ -31,7 +31,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
-                <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                     <img src="img/logo_canaco_sevytur_puruandiro.png" width="140px" height="140px">
                     <h1 class="m-0 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
@@ -50,39 +50,47 @@
                     </div>
                     <div class="col-lg-5 text-right">
                         <div class="d-inline-flex align-items-center p-2">
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopuruandiro/" target="_blank">
+                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-                    <a href="index.html" class="navbar-brand d-block d-lg-none">
-                        <h1 class="m-0 display-4 text-primary text-uppercase">CANACO</h1>
+                    <a href="index.php" class="navbar-brand d-block d-lg-none">
+                        <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Inicio</a>
+                            <a href="index.php" class="nav-item nav-link">Inicio</a>
                             <a href="nosotros.html" class="nav-item nav-link">Nosotros</a>
                             <a href="tramites_y_servicios.html" class="nav-item nav-link">Trámites y servicios</a>
                             <a href="historia.html" class="nav-item nav-link active">Historia</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Áreas turísticas</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="#" class="dropdown-item">Menu Item 1</a>
-                                    <a href="#" class="dropdown-item">Menu Item 2</a>
-                                    <a href="#" class="dropdown-item">Menu Item 3</a>
-                                </div>
-                            </div>
+                            <a href="noticias.html" class="nav-item nav-link">Noticias</a>
+                            <a href="areas_turisticas.html" class="nav-item nav-link">Áreas turísticas</a>
                             <a href="contacto.html" class="nav-item nav-link">Contacto</a>
                         </div>
                         <a href="" class="btn btn-primary mr-3 d-none d-lg-block">Negocios</a>
+                        
+
+                        <!-- Imagen como botón -->
+                        <div class="center-text">
+                        <a href="<?php echo isset($_SESSION['usuario']) ? 'cerrar_sesion.php' : 'login.php'; ?>">
+                            <img src="img/Icono_inicioSesión.png" alt="Acceder al login" class="img-fluid rounded" style="max-width: 70px;">
+                        </a>
+                        <!-- Texto centrado: solo se muestra si hay sesión -->
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <p><?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+                        <?php endif; ?>
+                    </div>
+
+
                     </div>
                 </nav>
             </div>
@@ -91,36 +99,40 @@
     <!-- Header End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
-        <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-3 text-white text-uppercase">Attorney</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Attorney</p>
-                </div>
+   <!-- Page Header Start -->
+<div class="container-fluid bg-page-header" style="margin-bottom: 90px; background-image: url('img/Expresidentes.jpg'); background-size: cover; background-position: center; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div> <!-- Ajusta el valor de transparencia aquí -->
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+            <h3 class="display-3 text-white text-uppercase">Nuestra historia</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="index.html">Inicio</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Historia</p>
             </div>
         </div>
     </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
+
+
+
 
 
     <!-- Team Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center pb-2">
-                <h6 class="text-uppercase">Our Attorneys</h6>
-                <h1 class="mb-4">Meet Our Attorneys</h1>
+                <h6 class="text-uppercase">Ex presidentes</h6>
+                <h1 class="mb-4">Conoce a nuestros Ex presidentes</h1>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="bg-primary rounded" style="height: 200px;"></div>
                     <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
                         <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
+                            <h5 class="mb-2 px-4">Sr. José Guiza</h5>
+                            <p class="mb-3 px-4">1927,1928,1930,1932 y 1933 </p>
                             <div class="team-img position-relative">
                                 <img class="img-fluid" src="img/team-1.jpg" alt="">
                                 <div class="team-social">
@@ -131,8 +143,8 @@
                             </div>
                         </div>
                         <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
+                            <h5 class="mb-2 px-4">r. José Jesús Flores </h5>
+                            <p class="mb-3 px-4">1929 Y 1942</p>
                             <div class="team-img position-relative">
                                 <img class="img-fluid" src="img/team-2.jpg" alt="">
                                 <div class="team-social">
@@ -143,8 +155,8 @@
                             </div>
                         </div>
                         <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
+                            <h5 class="mb-2 px-4">Sr. Enrique Ponce de León </h5>
+                            <p class="mb-3 px-4">1929 </p>
                             <div class="team-img position-relative">
                                 <img class="img-fluid" src="img/team-3.jpg" alt="">
                                 <div class="team-social">
@@ -155,8 +167,8 @@
                             </div>
                         </div>
                         <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
+                            <h5 class="mb-2 px-4">Sr. Gaspar Corral </h5>
+                            <p class="mb-3 px-4"> 1931</p>
                             <div class="team-img position-relative">
                                 <img class="img-fluid" src="img/team-4.jpg" alt="">
                                 <div class="team-social">
@@ -167,8 +179,8 @@
                             </div>
                         </div>
                         <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">Attorney Name</h5>
-                            <p class="mb-3 px-4">Practice Area</p>
+                            <h5 class="mb-2 px-4">Dr. Alfonso Esquivel L.</h5>
+                            <p class="mb-3 px-4">1934</p>
                             <div class="team-img position-relative">
                                 <img class="img-fluid" src="img/team-5.jpg" alt="">
                                 <div class="team-social">
@@ -178,6 +190,487 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Austreberto Vázquez  </h5>
+                            <p class="mb-3 px-4">  1935, 1939 y 1940</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Álvaro García </h5>
+                            <p class="mb-3 px-4"> 1936</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Pascual Gómez Delgado </h5>
+                            <p class="mb-3 px-4"> 1936</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Salvador Morales Cerda</h5>
+                            <p class="mb-3 px-4"> 1937</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Carlos García G. </h5>
+                            <p class="mb-3 px-4"> 1938</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4"> Sr. Luis Hinojosa M. </h5>
+                            <p class="mb-3 px-4"> 1941</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Francisco Ponce Zepeda</h5>
+                            <p class="mb-3 px-4"> 1943-1944</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Mauricio E. García</h5>
+                            <p class="mb-3 px-4">  1945 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Manuel Valtierra V </h5>
+                            <p class="mb-3 px-4"> 1946 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Francisco Pérez S.</h5>
+                            <p class="mb-3 px-4"> 1947 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Salvador Morales R.</h5>
+                            <p class="mb-3 px-4">1948-1949</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Antonio Ceballos </h5>
+                            <p class="mb-3 px-4"> 1950,1951 y 1953 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Dionisio González Barrera  </h5>
+                            <p class="mb-3 px-4"> </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. José González González  </h5>
+                            <p class="mb-3 px-4"> 1954-1955,1957-1958</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Mariano Gómez C. </h5>
+                            <p class="mb-3 px-4"> 1956</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Adalberto González</h5>
+                            <p class="mb-3 px-4"> 1959</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Luís Galván G.</h5>
+                            <p class="mb-3 px-4"> 1960 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Alfonso Esquivel P.</h5>
+                            <p class="mb-3 px-4"> 1963,1970-1971 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Miguel Aguirre A.</h5>
+                            <p class="mb-3 px-4">1972,1974,1977-1978,1988-1989 </p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Salvador Fuentes M.</h5>
+                            <p class="mb-3 px-4">1973</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Ubaldo Lara López</h5>
+                            <p class="mb-3 px-4"> 1975, 1977</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Manuel Guillen M.</h5>
+                            <p class="mb-3 px-4">1979</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Alfonso Zavala M.</h5>
+                            <p class="mb-3 px-4">1980</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Ignacio Ponce Orozco</h5>
+                            <p class="mb-3 px-4">1981</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Ing. Arturo Ponce Vargas</h5>
+                            <p class="mb-3 px-4">1982</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4"> Sr. Héctor González Vázquez</h5>
+                            <p class="mb-3 px-4">1983</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">MVZ Rogelio Ceballos M.</h5>
+                            <p class="mb-3 px-4">1984</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Rubén Pérez Anaya</h5>
+                            <p class="mb-3 px-4">1985-1986</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">C.P. Gustavo Parra Lara</h5>
+                            <p class="mb-3 px-4">1987</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Dionisio González Vázquez</h5>
+                            <p class="mb-3 px-4">1990</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Arq. Guillermo Madrigal</h5>
+                            <p class="mb-3 px-4">1991</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Ramón Cisneros T.</h5>
+                            <p class="mb-3 px-4">1992</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Victorino González García</h5>
+                            <p class="mb-3 px-4">1993</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Lic. Víctor Godínez Uribe</h5>
+                            <p class="mb-3 px-4">1994-1995</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. Juan González García</h5>
+                            <p class="mb-3 px-4">1996-1997</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">C.P. Héctor Manuel Haro Negrete</h5>
+                            <p class="mb-3 px-4">1998-1999</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">C.P.J. Jesús Madrigal Hinojosa</h5>
+                            <p class="mb-3 px-4">2000-2001</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">C.P. Julio Cesar Martínez Ortega</h5>
+                            <p class="mb-3 px-4">2002-2004</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Srita. Ma. De los Ángeles Serrato G.</h5>
+                            <p class="mb-3 px-4"> 2004-2006</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">Sr. José Enrique González Pérez</h5>
+                            <p class="mb-3 px-4">2007-2009</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -193,41 +686,22 @@
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-lg-6 py-5">
                         <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <h1 class="text-center text-white mb-4">Get An Appointment</h1>
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="date" id="date" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <div class="time" id="time" data-target-input="nearest">
-                                                <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 1</option>
-                                        <option value="3">Service 1</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Get An Appointment</button>
-                                </div>
+                            <h2 class="text-center text-white mb-4">HISTORIA</h2>
+                            <!-- Imagen añadida -->
+                              <img src="img/Galeria.jpeg" alt="Imagen relacionada con la historia" class="img-fluid mb-4" style="background: rgba(55, 55, 63, .7);">
+                            
+                           <form> 
+                            <!-- Párrafo añadido --> 
+                             <p class="text-white text-justify"> El día 03 de Octubre del año 1927, a iniciativa de los señores José Guiza Tapia y Alberto Estrada, se reunieron varios comerciantes de esta cuidad, en la casa marcada con el número 25, propiedad de don José Guiza, en la avenida José María Morelos. En dicha reunión toma la palabra el señor Alberto Estrada para manifestar a todos allí reunidos el objeto de aquella reunión: Formar una Cámara de Comercio, a fin de poder disfrutar de todos los beneficios que esta clase de instituciones otorgan. Enseguida se leyó la Ley de Cámaras de Comercio, de fecha 12 de Junio de 1908, y se les explicó los requisitos que deberían de llenar para que estas agrupaciones fueran reconocidas por la Secretaría de Comercio Industria y Trabajo. <br> 
+                                Aprobada la idea por todos los concurrentes, de inmediato procedieron a formar la mesa directiva, quedando de Presidente el señor José Guiza Tapia; Vicepresidente, Dr. Jesús Flores; Secretario, Alberto Estrada y Tesorero, don Enrique Ponce de León; nombrando también a los respectivos Vocales y Comisiones. <br>
+                                Se estableció la cuota de inscripción por socio, que en esos buenos tiempos alcanzaba la suma de 3 pesos, acordando que la Mesa Directiva se encargaría de fijar la cuota mensual, misma que no excedería de cinco pesos, ni sería menor de 2, para los socios fundadores, y un peso para los socios contribuyentes, como se les llamó a los que se inscribieron posteriormente. <br>
+                                Ese mismo día se dio lectura de estatutos, mismos después de ser discutidos por la asamblea, fueron aprobados. <br> 
+                                En otro renglón se aprobó que el nombre de esta institución fuera "Cámara Nacional del Comercio e Industria", dado que en aquel entonces había en esta ciudad varias manufacturas, tales como: fábrica de refrescos limonadas -como se les denominaba en ese entonces-, una fábrica de cigarros, varias rebocerías, tenerías, sastrerías, telares para la confección de zarapes y cobijas de lana, se elaboraban tablillas de chocolate, harina, pastas y zapatos entre otras cosas. <br> 
+                                Asimismo, se acordó que dicha institución no podría ocuparse de asuntos extraños a los que se determina la ley de Cámara de Comercio y de manera especial, que no se mezclara en asuntos políticos o religiosos. 
+                            </p> 
+                            <!-- Continuar con el formulario --> 
+                            <h5 class="text-right text-white mb-4">José Antonio Zavala Bucio</h5>
+                            <h6 class="text-right text-white mb-4">Cronista de la ciudad</h6>
                             </form>
                         </div>
                     </div>
@@ -244,7 +718,7 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100 rounded overflow-hidden">
-                        <img class="position-absolute w-100 h-100" src="img/feature.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/Galeria.jpeg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
@@ -294,7 +768,7 @@
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Ubicación</h5>
-                        <p class="m-0">Matamoros #64</p>
+                        <p class="m-0">Matamoros #64, Col. Centro, C.P:58500 Puruándiro, Mich.</p>
                     </div>
                 </div>
             </div>
@@ -312,7 +786,7 @@
                     <i class="fa fa-2x fa-phone-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Teléfono</h5>
-                        <p class="m-0">+1 438-383-0238</p>
+                        <p class="m-0">+52 438-383-0238</p>
                     </div>
                 </div>
             </div>
@@ -322,20 +796,23 @@
                 <a href="index.html" class="navbar-brand">
                     <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">CANACO</h1>
                 </a>
-                <p class="text-canaco">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <p class="text-canaco" style="text-align: justify;">La Cámara Nacional de Comercio, Servicio y Turismo de Puruándiro, es una Institución de interés público, autómata, con personalidad jurídica 
+                    y patrimonio propio constituido, conforme a los dispuesto en la Ley de Cámaras Empresariales y sus Confederaciones.
+                </p>  
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canacopu/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopuruandiro/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square mr-2" href="https://www.facebook.com/canaco.puruandiro" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-canaco btn-lg-square" href="https://www.instagram.com/canacopu?igsh=a3Jtc3R0OXAyN2Fx" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces populares</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
-                    <a class="text-canaco mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Historia</a>
-                    <a class="text-canaco" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+                    <a class="text-canaco mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-canaco mb-2" href="nosotros.html"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
+                    <a class="text-canaco mb-2" href="tramites_y_servicios.html"><i class="fa fa-angle-right mr-2"></i>Trámites y servicios</a>
+                    <a class="text-canaco mb-2" href="historia.html"><i class="fa fa-angle-right mr-2"></i>Historia</a>
+                    <a class="text-canaco" href="noticias.html"><i class="fa fa-angle-right mr-2"></i>Noticias</a>
+                    <a class="text-canaco" href="contacto.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
